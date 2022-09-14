@@ -1,5 +1,6 @@
 package com.jonas.feign;
 
+import com.jonas.domain.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,4 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface UserFeignService {
     @GetMapping("/user/getUserName")
     String getName(@RequestParam int userId);
+
+    @GetMapping("/user/info")
+    User getUser();
 }
