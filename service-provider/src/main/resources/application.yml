@@ -1,0 +1,17 @@
+server:
+  port: 18080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:18848
