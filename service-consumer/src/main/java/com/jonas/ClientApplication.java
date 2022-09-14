@@ -1,4 +1,4 @@
-package com.jonas.consumer;
+package com.jonas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

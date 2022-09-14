@@ -1,0 +1,17 @@
+server:
+  port: 18082
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:18848
+    gateway:
+      routes:
+        - id: city #路由id,唯一
+          uri: lb://consumer #负载到consumer
+          predicates:
+            - Path=/city/** #以city开头的请求都负载到consumer服务
+          filters:
+            - RewritePath=/city/(?<segment>.*), /$\{segment} #过滤掉url里的city,例如http://ip:port/city/getCity -> http://ip:port/getCity

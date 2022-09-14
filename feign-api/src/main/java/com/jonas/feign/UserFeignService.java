@@ -1,4 +1,4 @@
-package com.jonas.consumer.controller;
+package com.jonas.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 // service-provider 是微服务的 spring.application.name
 @FeignClient("service-provider")
-public interface UserService {
+public interface UserFeignService {
     @GetMapping("/user/getUserName")
     String getName(@RequestParam int userId);
 }
