@@ -9,11 +9,13 @@ management:
       exposure:
         include: "*"
 
-spring:
-  application:
-    name: service-provider
-  cloud:
-    nacos:
-      server-addr: 127.0.0.1:18848
-      config:
-        file-extension: yaml
+#spring:
+#  application:
+#    name: service-provider
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:18848
+#      config:
+#        server-addr: 127.0.0.1:18848
+#        file-extension: yaml
