@@ -1,0 +1,23 @@
+server:
+  port: 28080
+
+spring:
+  application:
+    name: dubbo-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:18848
+  main:
+    allow-circular-references: true
+
+dubbo:
+  scan:
+    base-packages:
+      - com.jonas.dubbo.provider  #Dubbo服务实现类的扫描基准包路径
+  protocol:  #Dubbo服务暴露的协议配置，其中子属性name为协议名称，port为协议端口（-1 表示自增端口，从 20880 开始）
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost  #Dubbo服务注册中心的配置地址，它的值spring-cloud://localhost表示挂载到Spring Cloud注册中心，不配置的话会提示没有配置注册中心的错误。
+

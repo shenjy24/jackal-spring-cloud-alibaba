@@ -1,0 +1,21 @@
+server:
+  port: 28081
+
+spring:
+  application:
+    name: dubbo-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:18848
+  main:
+    allow-circular-references: true
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: dubbo-provider
