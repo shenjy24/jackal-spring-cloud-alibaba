@@ -24,4 +24,6 @@ spring.cloud.nacos.config.file-extension=yaml
 
 ### 4. 在`Nocas`控制台页面创建`service-provider`配置
 
+![image](https://github.com/shenjy24/document/raw/master/images/spring/nacos-config.jpeg)
+
 ### 5. 在代码中就可以使用`@Value`来获取相关的配置信息
