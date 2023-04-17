@@ -26,4 +26,6 @@ spring.cloud.nacos.config.file-extension=yaml
 
 ![image](https://github.com/shenjy24/document/raw/master/images/spring/nacos-config.jpeg)
 
-### 5. 在代码中就可以使用`@Value`来获取相关的配置信息
+### 5. 在属性所在的类上添加 `@RefreshScope` 注解
+
+### 6. 在代码中就可以使用`@Value`来获取相关的配置信息

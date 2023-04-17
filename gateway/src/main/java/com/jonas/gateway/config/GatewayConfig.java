@@ -1,9 +1,6 @@
 package com.jonas.gateway.config;
 
-import com.jonas.gateway.filter.AFilter;
-import com.jonas.gateway.filter.BFilter;
-import com.jonas.gateway.filter.CFilter;
-import com.jonas.gateway.filter.ElapsedFilter;
+import com.jonas.gateway.filter.*;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -41,7 +38,9 @@ public class GatewayConfig {
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/filter/**")
-                        .filters(f -> f.stripPrefix(1).filter(new ElapsedFilter()))
+                        .filters(f -> f.stripPrefix(1)
+                                .filter(new ElapsedFilter())
+                                .filter(new RequestFilter()))
                         .uri("lb://service-consumer"))
                 .build();
     }
