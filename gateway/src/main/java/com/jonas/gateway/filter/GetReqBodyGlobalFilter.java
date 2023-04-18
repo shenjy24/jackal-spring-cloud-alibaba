@@ -1,5 +1,6 @@
 package com.jonas.gateway.filter;
 
+import io.netty.util.ReferenceCountUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -26,6 +27,7 @@ public class GetReqBodyGlobalFilter implements GlobalFilter, Ordered {
         body.subscribe(buffer -> {
             CharBuffer charBuffer = StandardCharsets.UTF_8.decode(buffer.asByteBuffer());
             DataBufferUtils.release(buffer);
+//            ReferenceCountUtil.release(buffer);
             bodyRef.set(charBuffer.toString());
         });
         // 打印请求体

@@ -31,6 +31,7 @@ public class ReqBodyGlobalFilter implements GlobalFilter, Ordered {
         return DataBufferUtils.join(request.getBody())
                 .flatMap(dataBuffer -> {
                     DataBufferUtils.retain(dataBuffer);
+                    System.out.println(dataBuffer);
                     Flux<DataBuffer> cachedFlux = Flux.defer(() -> Flux.just(dataBuffer.slice(0, dataBuffer.readableByteCount())));
                     ServerHttpRequest mutatedReq = new ServerHttpRequestDecorator(request) {
                         @Override
