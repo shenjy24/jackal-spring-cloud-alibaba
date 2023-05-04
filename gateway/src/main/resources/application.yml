@@ -7,6 +7,9 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:18848
+    sentinel:
+      transport:
+        dashboard: localhost:18080
     gateway:
       routes:
         - id: service-consumer-feign        # 路由id，没有固定规则，但唯一，建议与服务名对应
