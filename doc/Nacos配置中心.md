@@ -24,7 +24,7 @@ spring.cloud.nacos.config.file-extension=yaml
 
 ### 4. 在`Nocas`控制台页面创建`service-provider`配置
 
-![image](https://github.com/shenjy24/document/raw/master/images/spring/nacos-config.jpeg)
+![image](https://s1.ax1x.com/2023/09/11/pPgGdfO.jpg)
 
 ### 5. 在属性所在的类上添加 `@RefreshScope` 注解
 

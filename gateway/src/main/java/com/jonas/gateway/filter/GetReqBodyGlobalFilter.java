@@ -1,6 +1,5 @@
 package com.jonas.gateway.filter;
 
-import io.netty.util.ReferenceCountUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
