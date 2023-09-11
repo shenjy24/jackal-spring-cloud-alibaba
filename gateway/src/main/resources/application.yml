@@ -34,10 +34,10 @@ spring:
             - name: RequestRateLimiter
               args:
                 key-resolver: "#{@pathKeyResolver}"        # 限流键解析器的bean名称
-                redis-rate-limiter.replenishRate: 10       # 每秒填充令牌数
-                redis-rate-limiter.burstCapacity: 20       # 令牌桶容量
+                redis-rate-limiter.replenishRate: 1        # 每秒填充令牌数，每秒处理能力
+                redis-rate-limiter.burstCapacity: 5        # 令牌桶容量，处理瞬时流量的能力
             - name: RequestRateLimiter
               args:
                 key-resolver: "#{@remoteAddrKeyResolver}"  # 限流键解析器的bean名称
-                redis-rate-limiter.replenishRate: 10       # 每秒填充令牌数
-                redis-rate-limiter.burstCapacity: 20       # 令牌桶容量
+                redis-rate-limiter.replenishRate: 1        # 每秒填充令牌数
+                redis-rate-limiter.burstCapacity: 5        # 令牌桶容量
